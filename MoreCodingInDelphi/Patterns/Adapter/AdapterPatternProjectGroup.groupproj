@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{957A301A-EA4F-489C-8805-144ADCA7F659}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DuckTurkeyAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HouseCatCougarAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CustomerAdapter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DuckTurkeyAdapter">
+        <MSBuild Projects="DuckTurkeyAdapter.dproj"/>
+    </Target>
+    <Target Name="DuckTurkeyAdapter:Clean">
+        <MSBuild Projects="DuckTurkeyAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuckTurkeyAdapter:Make">
+        <MSBuild Projects="DuckTurkeyAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HouseCatCougarAdapter">
+        <MSBuild Projects="HouseCatCougarAdapter.dproj"/>
+    </Target>
+    <Target Name="HouseCatCougarAdapter:Clean">
+        <MSBuild Projects="HouseCatCougarAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HouseCatCougarAdapter:Make">
+        <MSBuild Projects="HouseCatCougarAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CustomerAdapter">
+        <MSBuild Projects="CustomerAdapter.dproj"/>
+    </Target>
+    <Target Name="CustomerAdapter:Clean">
+        <MSBuild Projects="CustomerAdapter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CustomerAdapter:Make">
+        <MSBuild Projects="CustomerAdapter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DuckTurkeyAdapter;HouseCatCougarAdapter;CustomerAdapter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DuckTurkeyAdapter:Clean;HouseCatCougarAdapter:Clean;CustomerAdapter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DuckTurkeyAdapter:Make;HouseCatCougarAdapter:Make;CustomerAdapter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

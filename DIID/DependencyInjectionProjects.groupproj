@@ -1,0 +1,144 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9D7AE288-69D0-4E3D-91D2-E695972029B9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="InjectionTypesDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MethodInjectionDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DILifetimeDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MultipleImplementationsAtRuntime.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DelegateToDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uRegisterInstanceDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uLazyDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uRegisterFactoryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PrimitiveRegistrationDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FileViewer\FileDisplayer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="InjectionTypesDemo">
+        <MSBuild Projects="InjectionTypesDemo.dproj"/>
+    </Target>
+    <Target Name="InjectionTypesDemo:Clean">
+        <MSBuild Projects="InjectionTypesDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="InjectionTypesDemo:Make">
+        <MSBuild Projects="InjectionTypesDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MethodInjectionDemo">
+        <MSBuild Projects="MethodInjectionDemo.dproj"/>
+    </Target>
+    <Target Name="MethodInjectionDemo:Clean">
+        <MSBuild Projects="MethodInjectionDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MethodInjectionDemo:Make">
+        <MSBuild Projects="MethodInjectionDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DILifetimeDemo">
+        <MSBuild Projects="DILifetimeDemo.dproj"/>
+    </Target>
+    <Target Name="DILifetimeDemo:Clean">
+        <MSBuild Projects="DILifetimeDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DILifetimeDemo:Make">
+        <MSBuild Projects="DILifetimeDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultipleImplementationsAtRuntime">
+        <MSBuild Projects="MultipleImplementationsAtRuntime.dproj"/>
+    </Target>
+    <Target Name="MultipleImplementationsAtRuntime:Clean">
+        <MSBuild Projects="MultipleImplementationsAtRuntime.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultipleImplementationsAtRuntime:Make">
+        <MSBuild Projects="MultipleImplementationsAtRuntime.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DelegateToDemo">
+        <MSBuild Projects="DelegateToDemo.dproj"/>
+    </Target>
+    <Target Name="DelegateToDemo:Clean">
+        <MSBuild Projects="DelegateToDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DelegateToDemo:Make">
+        <MSBuild Projects="DelegateToDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uRegisterInstanceDemo">
+        <MSBuild Projects="uRegisterInstanceDemo.dproj"/>
+    </Target>
+    <Target Name="uRegisterInstanceDemo:Clean">
+        <MSBuild Projects="uRegisterInstanceDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uRegisterInstanceDemo:Make">
+        <MSBuild Projects="uRegisterInstanceDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uLazyDemo">
+        <MSBuild Projects="uLazyDemo.dproj"/>
+    </Target>
+    <Target Name="uLazyDemo:Clean">
+        <MSBuild Projects="uLazyDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uLazyDemo:Make">
+        <MSBuild Projects="uLazyDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uRegisterFactoryDemo">
+        <MSBuild Projects="uRegisterFactoryDemo.dproj"/>
+    </Target>
+    <Target Name="uRegisterFactoryDemo:Clean">
+        <MSBuild Projects="uRegisterFactoryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uRegisterFactoryDemo:Make">
+        <MSBuild Projects="uRegisterFactoryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PrimitiveRegistrationDemo">
+        <MSBuild Projects="PrimitiveRegistrationDemo.dproj"/>
+    </Target>
+    <Target Name="PrimitiveRegistrationDemo:Clean">
+        <MSBuild Projects="PrimitiveRegistrationDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PrimitiveRegistrationDemo:Make">
+        <MSBuild Projects="PrimitiveRegistrationDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FileDisplayer">
+        <MSBuild Projects="FileViewer\FileDisplayer.dproj"/>
+    </Target>
+    <Target Name="FileDisplayer:Clean">
+        <MSBuild Projects="FileViewer\FileDisplayer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FileDisplayer:Make">
+        <MSBuild Projects="FileViewer\FileDisplayer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="InjectionTypesDemo;MethodInjectionDemo;DILifetimeDemo;MultipleImplementationsAtRuntime;DelegateToDemo;uRegisterInstanceDemo;uLazyDemo;uRegisterFactoryDemo;PrimitiveRegistrationDemo;FileDisplayer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="InjectionTypesDemo:Clean;MethodInjectionDemo:Clean;DILifetimeDemo:Clean;MultipleImplementationsAtRuntime:Clean;DelegateToDemo:Clean;uRegisterInstanceDemo:Clean;uLazyDemo:Clean;uRegisterFactoryDemo:Clean;PrimitiveRegistrationDemo:Clean;FileDisplayer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="InjectionTypesDemo:Make;MethodInjectionDemo:Make;DILifetimeDemo:Make;MultipleImplementationsAtRuntime:Make;DelegateToDemo:Make;uRegisterInstanceDemo:Make;uLazyDemo:Make;uRegisterFactoryDemo:Make;PrimitiveRegistrationDemo:Make;FileDisplayer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

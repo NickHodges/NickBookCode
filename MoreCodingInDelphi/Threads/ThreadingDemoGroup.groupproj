@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5776C2C4-C9E5-47FF-87C4-3A8B3D03D0EF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VeryBasicThreadDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TerminatedDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExceptionInThreadDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ClassMethodsOnTThreadDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SynchronizingThreadsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MultipleThreadsDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="EventDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VeryBasicThreadDemo">
+        <MSBuild Projects="VeryBasicThreadDemo.dproj"/>
+    </Target>
+    <Target Name="VeryBasicThreadDemo:Clean">
+        <MSBuild Projects="VeryBasicThreadDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VeryBasicThreadDemo:Make">
+        <MSBuild Projects="VeryBasicThreadDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TerminatedDemo">
+        <MSBuild Projects="TerminatedDemo.dproj"/>
+    </Target>
+    <Target Name="TerminatedDemo:Clean">
+        <MSBuild Projects="TerminatedDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TerminatedDemo:Make">
+        <MSBuild Projects="TerminatedDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExceptionInThreadDemo">
+        <MSBuild Projects="ExceptionInThreadDemo.dproj"/>
+    </Target>
+    <Target Name="ExceptionInThreadDemo:Clean">
+        <MSBuild Projects="ExceptionInThreadDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExceptionInThreadDemo:Make">
+        <MSBuild Projects="ExceptionInThreadDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ClassMethodsOnTThreadDemo">
+        <MSBuild Projects="ClassMethodsOnTThreadDemo.dproj"/>
+    </Target>
+    <Target Name="ClassMethodsOnTThreadDemo:Clean">
+        <MSBuild Projects="ClassMethodsOnTThreadDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ClassMethodsOnTThreadDemo:Make">
+        <MSBuild Projects="ClassMethodsOnTThreadDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SynchronizingThreadsDemo">
+        <MSBuild Projects="SynchronizingThreadsDemo.dproj"/>
+    </Target>
+    <Target Name="SynchronizingThreadsDemo:Clean">
+        <MSBuild Projects="SynchronizingThreadsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SynchronizingThreadsDemo:Make">
+        <MSBuild Projects="SynchronizingThreadsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultipleThreadsDemo">
+        <MSBuild Projects="MultipleThreadsDemo.dproj"/>
+    </Target>
+    <Target Name="MultipleThreadsDemo:Clean">
+        <MSBuild Projects="MultipleThreadsDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultipleThreadsDemo:Make">
+        <MSBuild Projects="MultipleThreadsDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EventDemo">
+        <MSBuild Projects="EventDemo.dproj"/>
+    </Target>
+    <Target Name="EventDemo:Clean">
+        <MSBuild Projects="EventDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EventDemo:Make">
+        <MSBuild Projects="EventDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VeryBasicThreadDemo;TerminatedDemo;ExceptionInThreadDemo;ClassMethodsOnTThreadDemo;SynchronizingThreadsDemo;MultipleThreadsDemo;EventDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VeryBasicThreadDemo:Clean;TerminatedDemo:Clean;ExceptionInThreadDemo:Clean;ClassMethodsOnTThreadDemo:Clean;SynchronizingThreadsDemo:Clean;MultipleThreadsDemo:Clean;EventDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VeryBasicThreadDemo:Make;TerminatedDemo:Make;ExceptionInThreadDemo:Make;ClassMethodsOnTThreadDemo:Make;SynchronizingThreadsDemo:Make;MultipleThreadsDemo:Make;EventDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

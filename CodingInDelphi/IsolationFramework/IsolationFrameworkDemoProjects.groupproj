@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BF49D3F3-89A5-4597-8E5B-619E0EF30256}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SimpleStubDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestCCValidatorWithStubResults.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DependencyMeetsExpectations.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MocksWhereDependencyRaisesException.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SimpleStubDemo">
+        <MSBuild Projects="SimpleStubDemo.dproj"/>
+    </Target>
+    <Target Name="SimpleStubDemo:Clean">
+        <MSBuild Projects="SimpleStubDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleStubDemo:Make">
+        <MSBuild Projects="SimpleStubDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestCCValidatorWithStubResults">
+        <MSBuild Projects="TestCCValidatorWithStubResults.dproj"/>
+    </Target>
+    <Target Name="TestCCValidatorWithStubResults:Clean">
+        <MSBuild Projects="TestCCValidatorWithStubResults.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestCCValidatorWithStubResults:Make">
+        <MSBuild Projects="TestCCValidatorWithStubResults.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DependencyMeetsExpectations">
+        <MSBuild Projects="DependencyMeetsExpectations.dproj"/>
+    </Target>
+    <Target Name="DependencyMeetsExpectations:Clean">
+        <MSBuild Projects="DependencyMeetsExpectations.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DependencyMeetsExpectations:Make">
+        <MSBuild Projects="DependencyMeetsExpectations.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MocksWhereDependencyRaisesException">
+        <MSBuild Projects="MocksWhereDependencyRaisesException.dproj"/>
+    </Target>
+    <Target Name="MocksWhereDependencyRaisesException:Clean">
+        <MSBuild Projects="MocksWhereDependencyRaisesException.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MocksWhereDependencyRaisesException:Make">
+        <MSBuild Projects="MocksWhereDependencyRaisesException.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SimpleStubDemo;TestCCValidatorWithStubResults;DependencyMeetsExpectations;MocksWhereDependencyRaisesException"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SimpleStubDemo:Clean;TestCCValidatorWithStubResults:Clean;DependencyMeetsExpectations:Clean;MocksWhereDependencyRaisesException:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SimpleStubDemo:Make;TestCCValidatorWithStubResults:Make;DependencyMeetsExpectations:Make;MocksWhereDependencyRaisesException:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

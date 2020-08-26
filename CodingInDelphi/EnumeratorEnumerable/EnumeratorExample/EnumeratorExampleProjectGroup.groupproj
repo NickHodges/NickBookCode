@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9318D7FE-91BF-4C6E-81EE-8D2B852817FE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="EnumeratorExample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IEnumerableExample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="EnumeratorExample">
+        <MSBuild Projects="EnumeratorExample.dproj"/>
+    </Target>
+    <Target Name="EnumeratorExample:Clean">
+        <MSBuild Projects="EnumeratorExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EnumeratorExample:Make">
+        <MSBuild Projects="EnumeratorExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IEnumerableExample">
+        <MSBuild Projects="IEnumerableExample.dproj"/>
+    </Target>
+    <Target Name="IEnumerableExample:Clean">
+        <MSBuild Projects="IEnumerableExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IEnumerableExample:Make">
+        <MSBuild Projects="IEnumerableExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="EnumeratorExample;IEnumerableExample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="EnumeratorExample:Clean;IEnumerableExample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="EnumeratorExample:Make;IEnumerableExample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

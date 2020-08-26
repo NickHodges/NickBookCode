@@ -1,0 +1,132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8483BC72-C136-43B1-B263-0665686223C0}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NoParallelization.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SimpleTaskDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MultipleTasksDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FutureDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="StartTaskDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TaskException.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CancelTaskDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ParallelForDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="StrideDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NoParallelization">
+        <MSBuild Projects="NoParallelization.dproj"/>
+    </Target>
+    <Target Name="NoParallelization:Clean">
+        <MSBuild Projects="NoParallelization.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NoParallelization:Make">
+        <MSBuild Projects="NoParallelization.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleTaskDemo">
+        <MSBuild Projects="SimpleTaskDemo.dproj"/>
+    </Target>
+    <Target Name="SimpleTaskDemo:Clean">
+        <MSBuild Projects="SimpleTaskDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleTaskDemo:Make">
+        <MSBuild Projects="SimpleTaskDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MultipleTasksDemo">
+        <MSBuild Projects="MultipleTasksDemo.dproj"/>
+    </Target>
+    <Target Name="MultipleTasksDemo:Clean">
+        <MSBuild Projects="MultipleTasksDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MultipleTasksDemo:Make">
+        <MSBuild Projects="MultipleTasksDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FutureDemo">
+        <MSBuild Projects="FutureDemo.dproj"/>
+    </Target>
+    <Target Name="FutureDemo:Clean">
+        <MSBuild Projects="FutureDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FutureDemo:Make">
+        <MSBuild Projects="FutureDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StartTaskDemo">
+        <MSBuild Projects="StartTaskDemo.dproj"/>
+    </Target>
+    <Target Name="StartTaskDemo:Clean">
+        <MSBuild Projects="StartTaskDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StartTaskDemo:Make">
+        <MSBuild Projects="StartTaskDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TaskException">
+        <MSBuild Projects="TaskException.dproj"/>
+    </Target>
+    <Target Name="TaskException:Clean">
+        <MSBuild Projects="TaskException.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TaskException:Make">
+        <MSBuild Projects="TaskException.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CancelTaskDemo">
+        <MSBuild Projects="CancelTaskDemo.dproj"/>
+    </Target>
+    <Target Name="CancelTaskDemo:Clean">
+        <MSBuild Projects="CancelTaskDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CancelTaskDemo:Make">
+        <MSBuild Projects="CancelTaskDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ParallelForDemo">
+        <MSBuild Projects="ParallelForDemo.dproj"/>
+    </Target>
+    <Target Name="ParallelForDemo:Clean">
+        <MSBuild Projects="ParallelForDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ParallelForDemo:Make">
+        <MSBuild Projects="ParallelForDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StrideDemo">
+        <MSBuild Projects="StrideDemo.dproj"/>
+    </Target>
+    <Target Name="StrideDemo:Clean">
+        <MSBuild Projects="StrideDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StrideDemo:Make">
+        <MSBuild Projects="StrideDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NoParallelization;SimpleTaskDemo;MultipleTasksDemo;FutureDemo;StartTaskDemo;TaskException;CancelTaskDemo;ParallelForDemo;StrideDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NoParallelization:Clean;SimpleTaskDemo:Clean;MultipleTasksDemo:Clean;FutureDemo:Clean;StartTaskDemo:Clean;TaskException:Clean;CancelTaskDemo:Clean;ParallelForDemo:Clean;StrideDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NoParallelization:Make;SimpleTaskDemo:Make;MultipleTasksDemo:Make;FutureDemo:Make;StartTaskDemo:Make;TaskException:Make;CancelTaskDemo:Make;ParallelForDemo:Make;StrideDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

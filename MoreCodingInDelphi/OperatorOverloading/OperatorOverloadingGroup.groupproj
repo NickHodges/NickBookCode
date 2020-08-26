@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{27E0832E-0945-4760-92CC-81EFC8C322CC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Fractions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FractionsTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Fractions">
+        <MSBuild Projects="Fractions.dproj"/>
+    </Target>
+    <Target Name="Fractions:Clean">
+        <MSBuild Projects="Fractions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Fractions:Make">
+        <MSBuild Projects="Fractions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FractionsTests">
+        <MSBuild Projects="FractionsTests.dproj"/>
+    </Target>
+    <Target Name="FractionsTests:Clean">
+        <MSBuild Projects="FractionsTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FractionsTests:Make">
+        <MSBuild Projects="FractionsTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Fractions;FractionsTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Fractions:Clean;FractionsTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Fractions:Make;FractionsTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

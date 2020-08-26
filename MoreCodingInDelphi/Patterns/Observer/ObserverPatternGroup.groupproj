@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2832BF3F-4F11-4D8C-848F-FCAD49B3D68D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ObserverDesignPattern.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SpringObserver.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ObserverDesignPattern">
+        <MSBuild Projects="ObserverDesignPattern.dproj"/>
+    </Target>
+    <Target Name="ObserverDesignPattern:Clean">
+        <MSBuild Projects="ObserverDesignPattern.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ObserverDesignPattern:Make">
+        <MSBuild Projects="ObserverDesignPattern.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SpringObserver">
+        <MSBuild Projects="SpringObserver.dproj"/>
+    </Target>
+    <Target Name="SpringObserver:Clean">
+        <MSBuild Projects="SpringObserver.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SpringObserver:Make">
+        <MSBuild Projects="SpringObserver.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ObserverDesignPattern;SpringObserver"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ObserverDesignPattern:Clean;SpringObserver:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ObserverDesignPattern:Make;SpringObserver:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

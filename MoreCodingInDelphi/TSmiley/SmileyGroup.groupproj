@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{304BE73E-A177-4386-BCD4-A91FE7791C0D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Smiley.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclSmiley.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SmileyTestApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Smiley">
+        <MSBuild Projects="Smiley.dproj"/>
+    </Target>
+    <Target Name="Smiley:Clean">
+        <MSBuild Projects="Smiley.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Smiley:Make">
+        <MSBuild Projects="Smiley.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclSmiley">
+        <MSBuild Projects="dclSmiley.dproj"/>
+    </Target>
+    <Target Name="dclSmiley:Clean">
+        <MSBuild Projects="dclSmiley.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclSmiley:Make">
+        <MSBuild Projects="dclSmiley.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SmileyTestApp">
+        <MSBuild Projects="SmileyTestApp.dproj"/>
+    </Target>
+    <Target Name="SmileyTestApp:Clean">
+        <MSBuild Projects="SmileyTestApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SmileyTestApp:Make">
+        <MSBuild Projects="SmileyTestApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Smiley;dclSmiley;SmileyTestApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Smiley:Clean;dclSmiley:Clean;SmileyTestApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Smiley:Make;dclSmiley:Make;SmileyTestApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

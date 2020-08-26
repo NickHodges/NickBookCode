@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D671550B-0C3F-4F2C-A6AF-4E5206A51F49}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AttributesTestProgram.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AttributesEverywhere.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AttributesTestProgram">
+        <MSBuild Projects="AttributesTestProgram.dproj"/>
+    </Target>
+    <Target Name="AttributesTestProgram:Clean">
+        <MSBuild Projects="AttributesTestProgram.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AttributesTestProgram:Make">
+        <MSBuild Projects="AttributesTestProgram.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AttributesEverywhere">
+        <MSBuild Projects="AttributesEverywhere.dproj"/>
+    </Target>
+    <Target Name="AttributesEverywhere:Clean">
+        <MSBuild Projects="AttributesEverywhere.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AttributesEverywhere:Make">
+        <MSBuild Projects="AttributesEverywhere.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AttributesTestProgram;AttributesEverywhere"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AttributesTestProgram:Clean;AttributesEverywhere:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AttributesTestProgram:Make;AttributesEverywhere:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

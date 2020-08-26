@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{73B9AB9B-0126-4FB5-8569-0BA97A4E3969}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VMIDemo\VirtualMethodInterceptor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SimpleInterception\SimpleInterceptionDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SalaryChanger\SalaryChangerDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SalaryChangerIntf\SalaryChangerIntfDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SimpleInterception\AOPAttributesContainerDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SalaryAttribute\SalaryAttribute.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VirtualMethodInterceptor">
+        <MSBuild Projects="VMIDemo\VirtualMethodInterceptor.dproj"/>
+    </Target>
+    <Target Name="VirtualMethodInterceptor:Clean">
+        <MSBuild Projects="VMIDemo\VirtualMethodInterceptor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VirtualMethodInterceptor:Make">
+        <MSBuild Projects="VMIDemo\VirtualMethodInterceptor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleInterceptionDemo">
+        <MSBuild Projects="SimpleInterception\SimpleInterceptionDemo.dproj"/>
+    </Target>
+    <Target Name="SimpleInterceptionDemo:Clean">
+        <MSBuild Projects="SimpleInterception\SimpleInterceptionDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleInterceptionDemo:Make">
+        <MSBuild Projects="SimpleInterception\SimpleInterceptionDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SalaryChangerDemo">
+        <MSBuild Projects="SalaryChanger\SalaryChangerDemo.dproj"/>
+    </Target>
+    <Target Name="SalaryChangerDemo:Clean">
+        <MSBuild Projects="SalaryChanger\SalaryChangerDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SalaryChangerDemo:Make">
+        <MSBuild Projects="SalaryChanger\SalaryChangerDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SalaryChangerIntfDemo">
+        <MSBuild Projects="SalaryChangerIntf\SalaryChangerIntfDemo.dproj"/>
+    </Target>
+    <Target Name="SalaryChangerIntfDemo:Clean">
+        <MSBuild Projects="SalaryChangerIntf\SalaryChangerIntfDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SalaryChangerIntfDemo:Make">
+        <MSBuild Projects="SalaryChangerIntf\SalaryChangerIntfDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOPAttributesContainerDemo">
+        <MSBuild Projects="SimpleInterception\AOPAttributesContainerDemo.dproj"/>
+    </Target>
+    <Target Name="AOPAttributesContainerDemo:Clean">
+        <MSBuild Projects="SimpleInterception\AOPAttributesContainerDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOPAttributesContainerDemo:Make">
+        <MSBuild Projects="SimpleInterception\AOPAttributesContainerDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SalaryAttribute">
+        <MSBuild Projects="SalaryAttribute\SalaryAttribute.dproj"/>
+    </Target>
+    <Target Name="SalaryAttribute:Clean">
+        <MSBuild Projects="SalaryAttribute\SalaryAttribute.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SalaryAttribute:Make">
+        <MSBuild Projects="SalaryAttribute\SalaryAttribute.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VirtualMethodInterceptor;SimpleInterceptionDemo;SalaryChangerDemo;SalaryChangerIntfDemo;AOPAttributesContainerDemo;SalaryAttribute"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VirtualMethodInterceptor:Clean;SimpleInterceptionDemo:Clean;SalaryChangerDemo:Clean;SalaryChangerIntfDemo:Clean;AOPAttributesContainerDemo:Clean;SalaryAttribute:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VirtualMethodInterceptor:Make;SimpleInterceptionDemo:Make;SalaryChangerDemo:Make;SalaryChangerIntfDemo:Make;AOPAttributesContainerDemo:Make;SalaryAttribute:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

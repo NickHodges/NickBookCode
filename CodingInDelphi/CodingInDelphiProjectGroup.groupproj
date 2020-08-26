@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{36B7D4A2-A33B-4FA9-88ED-E5E0D8F5BFBC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AnonymousMethods\IntegerCalculator\IntegerCalculatorVCLProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Interfaces\DoNotMixInterfaceAndObjectReferences\DoNotMixInterfaceAndObjectReferencesConsoleProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Interfaces\Animals\AnimalVCLProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UnitTesting\RttiHelpersUnitTests\RttiHelpersUnitTestsProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="RunTimeTypingInformation\RttiContext_GetTypes_vs_GetType_on_Interfaces\RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AnonymousMethods\Circumvent_E2555_Cannot_Capture_Symbol\Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IntegerCalculatorVCLProject">
+        <MSBuild Projects="AnonymousMethods\IntegerCalculator\IntegerCalculatorVCLProject.dproj"/>
+    </Target>
+    <Target Name="IntegerCalculatorVCLProject:Clean">
+        <MSBuild Projects="AnonymousMethods\IntegerCalculator\IntegerCalculatorVCLProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IntegerCalculatorVCLProject:Make">
+        <MSBuild Projects="AnonymousMethods\IntegerCalculator\IntegerCalculatorVCLProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DoNotMixInterfaceAndObjectReferencesConsoleProject">
+        <MSBuild Projects="Interfaces\DoNotMixInterfaceAndObjectReferences\DoNotMixInterfaceAndObjectReferencesConsoleProject.dproj"/>
+    </Target>
+    <Target Name="DoNotMixInterfaceAndObjectReferencesConsoleProject:Clean">
+        <MSBuild Projects="Interfaces\DoNotMixInterfaceAndObjectReferences\DoNotMixInterfaceAndObjectReferencesConsoleProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DoNotMixInterfaceAndObjectReferencesConsoleProject:Make">
+        <MSBuild Projects="Interfaces\DoNotMixInterfaceAndObjectReferences\DoNotMixInterfaceAndObjectReferencesConsoleProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AnimalVCLProject">
+        <MSBuild Projects="Interfaces\Animals\AnimalVCLProject.dproj"/>
+    </Target>
+    <Target Name="AnimalVCLProject:Clean">
+        <MSBuild Projects="Interfaces\Animals\AnimalVCLProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AnimalVCLProject:Make">
+        <MSBuild Projects="Interfaces\Animals\AnimalVCLProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RttiHelpersUnitTestsProject">
+        <MSBuild Projects="UnitTesting\RttiHelpersUnitTests\RttiHelpersUnitTestsProject.dproj"/>
+    </Target>
+    <Target Name="RttiHelpersUnitTestsProject:Clean">
+        <MSBuild Projects="UnitTesting\RttiHelpersUnitTests\RttiHelpersUnitTestsProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RttiHelpersUnitTestsProject:Make">
+        <MSBuild Projects="UnitTesting\RttiHelpersUnitTests\RttiHelpersUnitTestsProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject">
+        <MSBuild Projects="RunTimeTypingInformation\RttiContext_GetTypes_vs_GetType_on_Interfaces\RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject.dproj"/>
+    </Target>
+    <Target Name="RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject:Clean">
+        <MSBuild Projects="RunTimeTypingInformation\RttiContext_GetTypes_vs_GetType_on_Interfaces\RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject:Make">
+        <MSBuild Projects="RunTimeTypingInformation\RttiContext_GetTypes_vs_GetType_on_Interfaces\RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject">
+        <MSBuild Projects="AnonymousMethods\Circumvent_E2555_Cannot_Capture_Symbol\Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject.dproj"/>
+    </Target>
+    <Target Name="Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject:Clean">
+        <MSBuild Projects="AnonymousMethods\Circumvent_E2555_Cannot_Capture_Symbol\Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject:Make">
+        <MSBuild Projects="AnonymousMethods\Circumvent_E2555_Cannot_Capture_Symbol\Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IntegerCalculatorVCLProject;DoNotMixInterfaceAndObjectReferencesConsoleProject;AnimalVCLProject;RttiHelpersUnitTestsProject;RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject;Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IntegerCalculatorVCLProject:Clean;DoNotMixInterfaceAndObjectReferencesConsoleProject:Clean;AnimalVCLProject:Clean;RttiHelpersUnitTestsProject:Clean;RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject:Clean;Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IntegerCalculatorVCLProject:Make;DoNotMixInterfaceAndObjectReferencesConsoleProject:Make;AnimalVCLProject:Make;RttiHelpersUnitTestsProject:Make;RttiContext_GetTypes_vs_GetType_on_Interfaces_ConsoleProject:Make;Circumvent_E2555_Cannot_Capture_Symbol_ConsoleProject:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

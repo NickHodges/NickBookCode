@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DAAE5A99-4C98-47C2-BF48-BE1EEFD36BFA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DecoratorDesignPattern.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DecoratorInterfaces.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DecoratorDesignPattern">
+        <MSBuild Projects="DecoratorDesignPattern.dproj"/>
+    </Target>
+    <Target Name="DecoratorDesignPattern:Clean">
+        <MSBuild Projects="DecoratorDesignPattern.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DecoratorDesignPattern:Make">
+        <MSBuild Projects="DecoratorDesignPattern.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DecoratorInterfaces">
+        <MSBuild Projects="DecoratorInterfaces.dproj"/>
+    </Target>
+    <Target Name="DecoratorInterfaces:Clean">
+        <MSBuild Projects="DecoratorInterfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DecoratorInterfaces:Make">
+        <MSBuild Projects="DecoratorInterfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DecoratorDesignPattern;DecoratorInterfaces"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DecoratorDesignPattern:Clean;DecoratorInterfaces:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DecoratorDesignPattern:Make;DecoratorInterfaces:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

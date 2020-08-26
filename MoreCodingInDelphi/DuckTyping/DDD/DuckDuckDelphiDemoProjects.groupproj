@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2B8394B6-3ED2-4A07-832A-0414780E76BE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DDDVCLApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DuckDuckDelphiDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DDDVCLApp">
+        <MSBuild Projects="DDDVCLApp.dproj"/>
+    </Target>
+    <Target Name="DDDVCLApp:Clean">
+        <MSBuild Projects="DDDVCLApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DDDVCLApp:Make">
+        <MSBuild Projects="DDDVCLApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DuckDuckDelphiDemo">
+        <MSBuild Projects="DuckDuckDelphiDemo.dproj"/>
+    </Target>
+    <Target Name="DuckDuckDelphiDemo:Clean">
+        <MSBuild Projects="DuckDuckDelphiDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DuckDuckDelphiDemo:Make">
+        <MSBuild Projects="DuckDuckDelphiDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DDDVCLApp;DuckDuckDelphiDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DDDVCLApp:Clean;DuckDuckDelphiDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DDDVCLApp:Make;DuckDuckDelphiDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

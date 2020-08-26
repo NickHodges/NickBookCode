@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{62C7B2A5-835C-47A4-99B4-85D1C9EB3CAA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ListDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="StackDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="QueueDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DictionaryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IEnumerableExample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ListDemo">
+        <MSBuild Projects="ListDemo.dproj"/>
+    </Target>
+    <Target Name="ListDemo:Clean">
+        <MSBuild Projects="ListDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ListDemo:Make">
+        <MSBuild Projects="ListDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StackDemo">
+        <MSBuild Projects="StackDemo.dproj"/>
+    </Target>
+    <Target Name="StackDemo:Clean">
+        <MSBuild Projects="StackDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StackDemo:Make">
+        <MSBuild Projects="StackDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="QueueDemo">
+        <MSBuild Projects="QueueDemo.dproj"/>
+    </Target>
+    <Target Name="QueueDemo:Clean">
+        <MSBuild Projects="QueueDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="QueueDemo:Make">
+        <MSBuild Projects="QueueDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DictionaryDemo">
+        <MSBuild Projects="DictionaryDemo.dproj"/>
+    </Target>
+    <Target Name="DictionaryDemo:Clean">
+        <MSBuild Projects="DictionaryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DictionaryDemo:Make">
+        <MSBuild Projects="DictionaryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IEnumerableExample">
+        <MSBuild Projects="IEnumerableExample.dproj"/>
+    </Target>
+    <Target Name="IEnumerableExample:Clean">
+        <MSBuild Projects="IEnumerableExample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IEnumerableExample:Make">
+        <MSBuild Projects="IEnumerableExample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ListDemo;StackDemo;QueueDemo;DictionaryDemo;IEnumerableExample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ListDemo:Clean;StackDemo:Clean;QueueDemo:Clean;DictionaryDemo:Clean;IEnumerableExample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ListDemo:Make;StackDemo:Make;QueueDemo:Make;DictionaryDemo:Make;IEnumerableExample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

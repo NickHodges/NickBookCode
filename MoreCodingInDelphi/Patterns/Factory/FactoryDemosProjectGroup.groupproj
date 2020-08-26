@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{82D5D2AE-E73C-4119-9EF7-BDEF54A19E72}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FactoryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NoCaseFactoryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MethodFactoryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AbstractFactoryDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FactoryDemo">
+        <MSBuild Projects="FactoryDemo.dproj"/>
+    </Target>
+    <Target Name="FactoryDemo:Clean">
+        <MSBuild Projects="FactoryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FactoryDemo:Make">
+        <MSBuild Projects="FactoryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NoCaseFactoryDemo">
+        <MSBuild Projects="NoCaseFactoryDemo.dproj"/>
+    </Target>
+    <Target Name="NoCaseFactoryDemo:Clean">
+        <MSBuild Projects="NoCaseFactoryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NoCaseFactoryDemo:Make">
+        <MSBuild Projects="NoCaseFactoryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MethodFactoryDemo">
+        <MSBuild Projects="MethodFactoryDemo.dproj"/>
+    </Target>
+    <Target Name="MethodFactoryDemo:Clean">
+        <MSBuild Projects="MethodFactoryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MethodFactoryDemo:Make">
+        <MSBuild Projects="MethodFactoryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AbstractFactoryDemo">
+        <MSBuild Projects="AbstractFactoryDemo.dproj"/>
+    </Target>
+    <Target Name="AbstractFactoryDemo:Clean">
+        <MSBuild Projects="AbstractFactoryDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AbstractFactoryDemo:Make">
+        <MSBuild Projects="AbstractFactoryDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FactoryDemo;NoCaseFactoryDemo;MethodFactoryDemo;AbstractFactoryDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FactoryDemo:Clean;NoCaseFactoryDemo:Clean;MethodFactoryDemo:Clean;AbstractFactoryDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FactoryDemo:Make;NoCaseFactoryDemo:Make;MethodFactoryDemo:Make;AbstractFactoryDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

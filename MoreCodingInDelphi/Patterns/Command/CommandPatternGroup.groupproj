@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{26E9FBFF-3D3D-46DA-9E60-1608240E7B1F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AutoKeyFob.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UndoDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CommandQueueDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Nick\Documents\Embarcadero\Studio\Projects\ChangeCommandsAtRuntimeDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AutoKeyFob">
+        <MSBuild Projects="AutoKeyFob.dproj"/>
+    </Target>
+    <Target Name="AutoKeyFob:Clean">
+        <MSBuild Projects="AutoKeyFob.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutoKeyFob:Make">
+        <MSBuild Projects="AutoKeyFob.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UndoDemo">
+        <MSBuild Projects="UndoDemo.dproj"/>
+    </Target>
+    <Target Name="UndoDemo:Clean">
+        <MSBuild Projects="UndoDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UndoDemo:Make">
+        <MSBuild Projects="UndoDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CommandQueueDemo">
+        <MSBuild Projects="CommandQueueDemo.dproj"/>
+    </Target>
+    <Target Name="CommandQueueDemo:Clean">
+        <MSBuild Projects="CommandQueueDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CommandQueueDemo:Make">
+        <MSBuild Projects="CommandQueueDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ChangeCommandsAtRuntimeDemo">
+        <MSBuild Projects="C:\Users\Nick\Documents\Embarcadero\Studio\Projects\ChangeCommandsAtRuntimeDemo.dproj"/>
+    </Target>
+    <Target Name="ChangeCommandsAtRuntimeDemo:Clean">
+        <MSBuild Projects="C:\Users\Nick\Documents\Embarcadero\Studio\Projects\ChangeCommandsAtRuntimeDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ChangeCommandsAtRuntimeDemo:Make">
+        <MSBuild Projects="C:\Users\Nick\Documents\Embarcadero\Studio\Projects\ChangeCommandsAtRuntimeDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AutoKeyFob;UndoDemo;CommandQueueDemo;ChangeCommandsAtRuntimeDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AutoKeyFob:Clean;UndoDemo:Clean;CommandQueueDemo:Clean;ChangeCommandsAtRuntimeDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AutoKeyFob:Make;UndoDemo:Make;CommandQueueDemo:Make;ChangeCommandsAtRuntimeDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
