@@ -23,10 +23,10 @@ uses
 
 procedure RegisterInterfaces(aContainer: TContainer);
 begin
-  GlobalContainer.RegisterType<IDisplayOnPanel, TFileDisplayer>;
-  GlobalContainer.RegisterType<IFileExtensionGetter, TFileExtensionGetter>;
-  GlobalContainer.RegisterType<IFilenameGetter, TFilenameGetter>;
-  GlobalContainer.Build;
+  aContainer.RegisterType<IDisplayOnPanel, TFileDisplayer>;
+  aContainer.RegisterType<IFileExtensionGetter, TFileExtensionGetter>;
+  aContainer.RegisterType<IFilenameGetter, TFilenameGetter>;
+  aContainer.Build;
 end;
 
 procedure RegisterDisplayers;
