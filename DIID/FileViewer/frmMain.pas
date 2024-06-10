@@ -54,7 +54,7 @@ begin
   FContainer := TContainer.Create;
   RegisterInterfaces(FContainer);
   RegisterDisplayers;
-  FFileDisplayer := GlobalContainer.Resolve<IDisplayOnPanel>;
+  FFileDisplayer := FContainer.Resolve<IDisplayOnPanel>;
   Extensions := FileDisplayerRegistry.GetExtensions;
   for Ext in Extensions do
   begin
